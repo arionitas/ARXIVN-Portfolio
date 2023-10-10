@@ -172,7 +172,8 @@ nav ul li a:hover::after {
     padding: 40px;
     font-size: 13px;
     font-weight: 300;
-    border-right: 10px;
+    border-radius: 10px;
+    transition: background 0.5s, transform 0.5s;
 
 }
 
@@ -193,6 +194,66 @@ nav ul li a:hover::after {
     font-size: 12px;
     margin-top: 20px;
     display: inline-block;
+}
+
+.services-list div:hover {
+    background: #953553;
+    transform: translateY(-10px);
+}
+
+/*--------------Portfolio-------------*/
+
+#portfolio {
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+ 
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.01), #030303);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+
+}
+
+
+.work:hover img {
+    transform: scale(1.1);
 }
 
 
