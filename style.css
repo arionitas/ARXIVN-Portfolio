@@ -425,3 +425,5 @@ nav .fa-solid, .fa-regular {
         transform: translateX(100%);
     }
 }
+
+html { overflow-x: hidden; }
