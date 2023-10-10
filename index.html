@@ -14,12 +14,12 @@
         <nav>
             <img src="assets/images/ARXIVN-LOGO-3.png" class="logo">
             <ul id="sidemenu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Music Videos</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#musicvideos">Music Videos</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <i class="fa-regular fa-rectangle-xmark" style="color: #00fa32;" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" style="color: #00fa32;" onclick="openmenu()"></i>       
@@ -105,7 +105,7 @@
 
  <!-------------------services--------------------------->
 
-<div id="services">
+ <div id="services">
     <div class="container">
         <center><h1 class="sub-title">My Services</h1></center>
             <div class="services-list">
@@ -180,55 +180,61 @@
  </div>
 </div>
     </div>
-    <br>
-    <br>
-    <br>    
-    <br>
-
-
  <!-------------------Animations - Please note animations have been put here for experimentation - if you feel they are better placed and positioned within CSS please do so!--------------------------->
  
 <div class="marquee-container">
     <div class="marquee"></div>   
-
-
-    
+    <br>
 
  <!-------------------Music Videos--------------------------->
 
-        <div id="Music Videos">
-        <center><h1 class="sub-title">Music Videos</h1></center>
-        <br>
-        <br>
-        <br>
-        <div>
-           <center><h2>01000101 01110110 01101001 01101100 00100000 [EVIL EYE BINARY]</h2></center>
-            <center><p> 'Evil Eye' from my album 'GEHENNA'. Following the story of character x who is stuck in the circle of Greed.</p></center>
+<div id="musicvideos">
+    <div class="container">
+            <center><h1 class="sub-title">Music Videos</h1></center>
             <br>
             <br>
-           <center><iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/VYbpqxmCfoA?autoplay=1&origin=http://example.com"
-  frameborder="0"></iframe></center>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div>
-            <center><h2>EvollovƎ</h2></center>
-            <center><p>A tale about two lovers, Juxtaposed.</p></center>
+            <br>
+            <div>
+               <center><h2>01000101 01110110 01101001 01101100 00100000 [EVIL EYE BINARY]</h2></center>
+                <center><p> 'Evil Eye' from my album 'GEHENNA'. Following the story of character x who is stuck in the circle of Greed.</p></center>
+                <br>
+                <br>
+               <center><iframe id="ytplayer" type="text/html" width="640" height="360"
+      src="https://www.youtube.com/embed/VYbpqxmCfoA?autoplay=1&origin=http://example.com"
+      frameborder="0"></iframe></center>
+            </div>
             <br>
             <br>
-            <center><iframe id="ytplayer" type="text/html" width="640" height="360"
-  src="https://www.youtube.com/embed/f2poYpSuSqQ?autoplay=1&origin=http://example.com"
-  frameborder="0"></iframe></center>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div>
+                <center><h2>EvollovƎ</h2></center>
+                <center><p>A tale about two lovers, Juxtaposed.</p></center>
+                <br>
+                <br>
+                <center><iframe id="ytplayer" type="text/html" width="640" height="360"
+      src="https://www.youtube.com/embed/f2poYpSuSqQ?autoplay=1&origin=http://example.com"
+      frameborder="0"></iframe></center>
+       </div>
+        
         </div>
     </div>
 </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
+ <!-------------------ANIMATIONS 2--------------------------->
+ <div class="marquee-container">
+    <div class="marquee"></div>   
+    <br>
  <!-------------------Contact--------------------------->
 
 <div id="contact">
@@ -247,12 +253,13 @@
                 <a href="assets/resume/Arion Mehmeti - Resume - 2023.pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
-                <form>
+                <form name="submit-to-google-sheet">
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
+                <span id="msg"></span>
             </div>
         </div>
         <div class="copyright">
@@ -291,6 +298,25 @@ function opentab(tabname){
         sidemenu.style.right = "-200px";
     }
 </script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyYwBg1auIZdbntZmvWA_ZYmA65npQTjWw4kwpXPT727vErwMh_XrO0D3g_d32gnKWpAA/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully, Thank You Hooman xD"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 
 </body>
 </html>
