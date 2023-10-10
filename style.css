@@ -362,7 +362,7 @@ nav .fa-solid, .fa-regular {
     display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px){
     #header {
         background-image: url(assets/cover-art/Phone-BG.png);
     }
@@ -381,13 +381,26 @@ nav .fa-solid, .fa-regular {
         background: #5D3FD3;
         position: fixed;
         top: 0;
-        right: 0;
+        right: -200px;
         width: 200px;
         height: 100vh;
         padding-top: 50px;
+        z-index: 2;
+    }
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid, .fa-regular {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
     }
 }
 
+
+/*--------------ANIMATIONS-------------*/
 
 #marquee-container {
     display: flex;

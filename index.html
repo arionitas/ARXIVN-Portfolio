@@ -13,16 +13,16 @@
     <div class="container">
         <nav>
             <img src="assets/images/ARXIVN-LOGO-3.png" class="logo">
-            <ul>
+            <ul id="sidemenu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="#">Music Videos</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact</a></li>
-                <i class="fa-regular fa-rectangle-xmark" style="color: #00fa32;"></i>
+                <i class="fa-regular fa-rectangle-xmark" style="color: #00fa32;" onclick="closemenu()"></i>
             </ul>
-            <i class="fa-solid fa-bars" style="color: #00fa32;"></i>       
+            <i class="fa-solid fa-bars" style="color: #00fa32;" onclick="openmenu()"></i>       
 
         </nav>
         <div class="header-text">
@@ -30,7 +30,9 @@
             <h1>Welcome, I'm Arion AKA<br><span>ARXIVN</span></h1>
         </div>
     </div>
-<!------------------------------ABOUT------------------------------------------------>
+
+ <!-------------------ABOUT--------------------------->
+
  </div>
  <div id="about">
     <div class="container">
@@ -72,14 +74,14 @@
                 </div>
                 <div class="tab-contents" id="experience">
                     <ul>
-                        <li><span>Front-End Web Development student at edX</span><br>2023 - Current</li>
-                        <li><span>Customer Service Specialist at Dimensions</span><br>January - August 2023</li>
-                        <li><span>Freelance Fashion Stylist</span><br>June 2022 - January 2023</li>
-                        <li><span>Founder, Global Brand Director at Konnect Studios</span><br>January 2019 - May 2022</li>
-                        <li><span>Creative Designer at Tank and Mammoth</span><br>July 2017 - February 2021</li>
-                        <li><span>Creative Designer at Vapeflix for Zeltu</span><br>March 2019 - April 2019</li>
-                        <li><span>Creative Designer at PIQUE (Dubai)</span><br>September 2018 - October 2018</li>
-                        <li><span>Junior 2D Artist at Absolute Post</span><br>July 2016 - July 2018</li>
+                        <li><span>Front-End Web Development student - <em>edX</em></span><br>2023 - Current</li>
+                        <li><span>Customer Service Specialist - <em>Dimensions</em></span><br>January - August 2023</li>
+                        <li><span>Freelance Fashion Stylist - <em>Frank Agency</em></span><br>June 2022 - January 2023</li>
+                        <li><span>Founder, Global Brand Director - <em>Konnect Studios</em></span><br>January 2019 - May 2022</li>
+                        <li><span>Creative Designer - <em>Tank and Mammoth</em></span><br>July 2017 - February 2021</li>
+                        <li><span>Creative Designer - <em>Vapeflix for Zeltu</em></span><br>March 2019 - April 2019</li>
+                        <li><span>Creative Designer - <em>PIQUE (Dubai)</em></span><br>September 2018 - October 2018</li>
+                        <li><span>Junior 2D Artist - <em>Absolute Post</em></span><br>July 2016 - July 2018</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id="education">
@@ -102,6 +104,7 @@
  <script src="app.js"></script>
 
  <!-------------------services--------------------------->
+
 <div id="services">
     <div class="container">
         <center><h1 class="sub-title">My Services</h1></center>
@@ -130,7 +133,9 @@
                 </div>
                 
             </div>
+
  <!-------------------portfolio--------------------------->
+
  <div id="portfolio">
     <di class="container">
         <center><h1 class="sub-title">My Work</h1></center>
@@ -179,10 +184,19 @@
     <br>
     <br>    
     <br>
+
+
+ <!-------------------Animations - Please note animations have been put here for experimentation - if you feel they are better placed and positioned within CSS please do so!--------------------------->
+ 
+<div class="marquee-container">
+    <div class="marquee"></div>   
+
+
+    
+
  <!-------------------Music Videos--------------------------->
-<div id="Music Videos">
-    <div class="marquee-container">
-        <div class="marquee"></div>
+
+        <div id="Music Videos">
         <center><h1 class="sub-title">Music Videos</h1></center>
         <br>
         <br>
@@ -214,7 +228,9 @@
     </div>
 </div>
 </div>
+
  <!-------------------Contact--------------------------->
+
 <div id="contact">
     <div class="container">
         <div class="row">
@@ -262,6 +278,18 @@ function opentab(tabname){
     document.getElementById(tabname).classList.add("active-tab");
 }
 
+</script>
+
+<script>
+
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu() {
+        sidemenu.style.right = "0";
+    }
+    function closemenu() {
+        sidemenu.style.right = "-200px";
+    }
 </script>
 
 </body>
