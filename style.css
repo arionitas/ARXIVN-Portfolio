@@ -286,14 +286,6 @@ nav ul li a:hover::after {
 
 /*--------------Contact-------------*/
 
-
-
-
-
-
-
-
-
 .contact-left {
     flex-basis: 35%;
 
@@ -331,7 +323,6 @@ nav ul li a:hover::after {
     color: #5D3FD3;
     transform-origin: translateY(-5px);
 }
-
 
 .btn.bt2n {
     display: inline-block;
