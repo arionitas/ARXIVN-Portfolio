@@ -286,23 +286,18 @@ nav ul li a:hover::after {
 
 /*--------------Contact-------------*/
 
+
+
+
+
+
+
+
+
 .contact-left {
     flex-basis: 35%;
-    position: relative;
-    width: 50px;
-    height: 50px;
-}
 
-i {
-    position: absolute;
-    touch-action: 50%;
-    height: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 20px;
-    z-index: 10;
-    color: white;
 }
-
 
 .contact-right {
     flex-basis: 60%;
@@ -336,6 +331,7 @@ i {
     color: #5D3FD3;
     transform-origin: translateY(-5px);
 }
+
 
 .btn.bt2n {
     display: inline-block;
